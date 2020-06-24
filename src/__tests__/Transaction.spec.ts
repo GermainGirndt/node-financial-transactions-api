@@ -10,6 +10,9 @@ describe('Transaction', () => {
       value: 1200,
     });
 
+    console.log(response.body.id);
+    console.log(isUuid(response.body.id));
+
     expect(isUuid(response.body.id)).toBe(true);
 
     expect(response.body).toMatchObject({

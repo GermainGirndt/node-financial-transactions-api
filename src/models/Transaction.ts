@@ -14,6 +14,8 @@ class Transaction {
     this.title = title;
     this.value = value;
     this.type = type;
+    console.log('Creating new uuid');
+    console.log(`Created id ${this.id}`);
   }
 }
 
