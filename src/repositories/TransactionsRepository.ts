@@ -8,8 +8,8 @@ interface Balance {
 
 interface CreateAppointmentDTO {
   title: string;
-  value: number;
   type: 'income' | 'outcome';
+  value: number;
 }
 
 class TransactionsRepository {
@@ -39,8 +39,8 @@ class TransactionsRepository {
     return balance;
   }
 
-  public create({ title, value, type }: CreateAppointmentDTO): Transaction {
-    const transaction = new Transaction({ title, value, type });
+  public create({ title, type, value }: CreateAppointmentDTO): Transaction {
+    const transaction = new Transaction({ title, type, value });
 
     this.transactions.push(transaction);
 

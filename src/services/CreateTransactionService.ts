@@ -3,8 +3,8 @@ import Transaction from '../models/Transaction';
 
 interface CreateTransactionRequest {
   title: string;
-  value: number;
   type: 'income' | 'outcome';
+  value: number;
 }
 
 class CreateTransactionService {
@@ -16,14 +16,14 @@ class CreateTransactionService {
 
   public execute({
     title,
-    value,
     type,
+    value,
   }: CreateTransactionRequest): Transaction {
     if (type === 'income') {
       const transaction = this.transactionsRepository.create({
         title,
-        value,
         type,
+        value,
       });
 
       return transaction;
@@ -36,8 +36,8 @@ class CreateTransactionService {
 
       const transaction = this.transactionsRepository.create({
         title,
-        value,
         type,
+        value,
       });
 
       return transaction;

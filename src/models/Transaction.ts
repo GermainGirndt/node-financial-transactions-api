@@ -9,13 +9,11 @@ class Transaction {
 
   type: 'income' | 'outcome';
 
-  constructor({ title, value, type }: Omit<Transaction, 'id'>) {
+  constructor({ title, type, value }: Omit<Transaction, 'id'>) {
     this.id = uuid();
     this.title = title;
-    this.value = value;
     this.type = type;
-    console.log('Creating new uuid');
-    console.log(`Created id ${this.id}`);
+    this.value = value;
   }
 }
 
